@@ -33,7 +33,6 @@ namespace QuoteManagement.Common
             mailMessage.From = new MailAddress(emailSetting.FromEmail, emailSetting.FromName);
 
             // Set the recipient address of the mail message 
-            // mailMessage.To.Add(new MailAddress(recipient));
             if (!string.IsNullOrEmpty(recipient))
             {
                 string[] strRecipient = recipient.Replace(";", ",").TrimEnd(',').Split(new char[] { ',' });
@@ -98,7 +97,7 @@ namespace QuoteManagement.Common
                 smtpClient.Send(mailMessage);
                 return true;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return false;
             }
@@ -175,8 +174,6 @@ namespace QuoteManagement.Common
             {
                 obj.Dispose();
             }
-
-            @object = null;
         }
 
 
