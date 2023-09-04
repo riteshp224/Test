@@ -15,7 +15,6 @@ namespace QuoteManagement.Data.DBRepository.Customer
 
         #region Post
         Task<string> SaveCustomerData(CustomerMasterModel model);
-        //Task<string> SaveBoardingStep(CustomerMasterModel model);
         #endregion
 
         #region Delete

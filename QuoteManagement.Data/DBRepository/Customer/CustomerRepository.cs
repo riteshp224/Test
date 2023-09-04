@@ -16,13 +16,11 @@ namespace QuoteManagement.Data.DBRepository.Customer
     public class CustomerRepository : BaseRepository, ICustomerRepository
     {
         #region Fields
-        private IConfiguration _config;
         #endregion
 
         #region Constructor
         public CustomerRepository(IConfiguration config, IOptions<DataConfig> dataConfig) : base(dataConfig)
         {
-            _config = config;
         }
         #endregion
 
