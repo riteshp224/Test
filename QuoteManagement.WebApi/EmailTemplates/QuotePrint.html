@@ -1,0 +1,353 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            height: 100vh;
+           /* background-color: #1A242E;*/
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e2d6d2;
+            padding: 5px 20px;
+        }
+
+        .header-text h4 {
+            font-size: 24px;
+        }
+
+        .logo-img {
+            height: 90px;
+            width: 216px;
+        }
+
+        h5 {
+            margin-top: 12px;
+            margin-bottom: 17px
+        }
+
+        .main-content {
+            padding: 5px;
+        }
+        /* customer details  */
+
+        .font-500 {
+            font-weight: 600;
+        }
+
+        .main-content h5,
+        p,
+        span {
+            color: #fff;
+        }
+
+        .customer-section {
+            display: flex;
+        }
+
+        .customer-details-s-1 {
+            width: 50%;
+        }
+
+        .customer-details-s-2 {
+            width: 50%;
+        }
+
+        .title-details h5 {
+            font-size: 24px;
+            color: #a5887d;
+        }
+        /* quote details  */
+
+        .quote-details-s-1 {
+            width: 100%;
+        }
+
+        .quote-details-s-2 {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .quote-details-s-3 {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        th,
+        td {
+            border-spacing: 7px;
+        }
+
+        th {
+            background-color: #a5887d;
+            border-radius: 12px;
+            padding: 15px 40px;
+        }
+
+        td {
+            background-color: #d9d9d9;
+            border-radius: 12px;
+            padding: 15px 15px;
+        }
+        /* pricing  */
+
+        .pricing-s-1 {
+            flex-direction: column;
+        }
+
+        .pricing-s-2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /* footer  */
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e2d6d2;
+            padding: 5px 10px;
+            margin: 0;
+        }
+
+        .footer-logo-s-1 img {
+            height: 90px;
+            width: 216px;
+        }
+
+        .footer-logo-s-1 {
+            width: 45%;
+        }
+
+        .footer-logo-s-2 {
+            flex-direction: column;
+            width: 45%;
+        }
+
+        @media(max-width:480px) {
+            .customer-section {
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+
+            .pricing-s-2 {
+                flex-wrap: wrap;
+            }
+
+            .footer {
+                /*flex-direction: column;*/
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="report">
+        <div class="page" style="page-break-after: always">
+            <div class="page-header">
+                <div class="header">
+                    <div class="header-text">
+                        <h4>Quote Number #{{QuoteNo}}</h4>
+                    </div>
+                    <div>
+                        <img src="https://www.adamhopecarpentry.co.uk/_webedit/cached-images/32.png" alt="" class="logo-img">
+                    </div>
+                </div>
+                <div class="title-details">
+                    <h5>Customer Details</h5>
+                    <div class="customer-section">
+                        <div class="customer-details-s-1">
+                            <p><span class="font-500">Customer Name: </span>{{CustomerName}}</p>
+                            <p style="display:{{SiteAddress1Display}}"><span class="font-500">Site Address: </span>{{SiteAddress1}}</p>
+                            <p style="display:{{CityDisplay}}"><span class="font-500">City: </span>{{City}}</p>
+                        </div>
+                        <div class="customer-details-s-2">
+                            <p style="display:{{SiteAddress2Display}}"><span class="font-500">Site Address Line 2: </span> {{SiteAddress2}}</p>
+                            <p style="display:{{PostCodeDisplay}}"><span class="font-500">Post Code: </span>{{PostCode}}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="title-details">
+                    <h5>Quote Details</h5>
+                    <div class="quote-section">
+                        <div class="quote-details-s-1" style="display:{{DescDisplay}}">
+                            <span class="font-500">Description:</span>
+                            <p>{{Description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content">
+                <div class="main-content">
+                    <div class="title-details">
+                        <div class="quote-section details-container">
+                            <div class="quote-details-s-2 details-1" style="display:{{ItemDetailDisplay}}">
+                                <span class="font-500">Item Details: </span>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Qty</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="detail-elements">
+                                        {{ItemDetails}}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="quote-details-s-3 details-2" style="display:{{AddInfoDisplay}};overflow: hidden;">
+                                <span class="font-500">Additional Details: </span>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Details</th>
+                                            <th>Description</th>
+                                            <th>Qty</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="detail-elements">
+                                        {{AdditionalInfoDetails}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="title-details summary-container">
+                        <div class="summary-1">
+                            <h5>Pricing</h5>
+                            <div class="pricing-section">
+                                <div class="pricing-s-3">
+                                    <p><span class="font-500">Total (£): </span>£{{Total}}</p>
+                                    <p><span class="font-500">VAT @ 20% (£): </span>£{{VAT}}</p>
+                                    <p><span class="font-500">Net Total (£): </span>£{{NetTotal}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer" style="page-break-after: always;">
+
+                <div class="footer">
+                    <div class="footer-logo-s-1">
+                        <img src="https://www.adamhopecarpentry.co.uk/_webedit/cached-images/32.png" alt="logo">
+                    </div>
+                    <div class="footer-logo-s-2">
+                        <p style="color: #000;"><span class="font-500" style="color: #000;">Trading Name: </span>AH Carpenters and Joinery, Kingswood, Bell Lane, Bedmond WD5 0QS</p>
+                        <p style="color: #000;"><span class="font-500" style="color: #000;">VAT Number: </span>277 7129 66</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var generatingReport = true;
+        function generateReport(params = {}) {
+            var activePage = null;
+            function addPage() {
+                var newPage = $(pageClone).clone();
+                $("#report").append(newPage);
+                activePage = newPage;
+            }
+            function addDetails(details) {
+                var detailAdded = false;
+                var detailsClone = $(details).clone();
+                var detailElements = $(details).find(".detail-elements").clone();
+                $(detailsClone).find(".detail-elements").html("");
+                var emptyDetailsContainer = $(detailsClone).clone();
+                $(activePage).find(".details-container").append(emptyDetailsContainer);
+                if ($(activePage).find(".page-content").height() > pageContentHeight) {
+                    $(emptyDetailsContainer).remove();
+                    addPage();
+                    emptyDetailsContainer = $(detailsClone).clone();
+                    $(activePage).find(".details-container").append(emptyDetailsContainer);
+                }
+                $.each($(detailElements).children(), function (index, element) {
+                    var elementClone = $(element).clone();
+                    console.log("Original Height : " + pageContentHeight + " New Height " + $(activePage).find(".page-content").height());
+                    $(emptyDetailsContainer).find(".detail-elements").append(elementClone);
+                    console.log("Inner Height : " + $(activePage).find(".page-content").innerHeight() + " ==== " + "Outer Height : " + $(activePage).find(".page-content").outerHeight());
+                    console.log("Original Height : " + pageContentHeight + " New Height " + $(activePage).find(".page-content").height());
+                    if ($(activePage).find(".page-content").height() > pageContentHeight) {
+                        if (!detailAdded) {
+                            $(emptyDetailsContainer).remove();
+                        }
+                        $(elementClone).remove();
+                        addPage();
+                        emptyDetailsContainer = $(detailsClone).clone();
+                        $(activePage).find(".details-container").append(emptyDetailsContainer);
+                        elementClone = $(element).clone();
+                        $(emptyDetailsContainer).find(".detail-elements").append(elementClone);
+                    }
+                    detailAdded = true;
+                });
+            }
+            function addSummary(summary) {
+                var summaryClone = $(summary).clone();
+                $(activePage).find(".summary-container").append(summaryClone);
+                console.log("Original Height : " + pageContentHeight + " New Height " + $(activePage).find(".page-content").height());
+                if ($(activePage).find(".page-content").height() > pageContentHeight) {
+                    $(summaryClone).remove();
+                    addPage();
+                    summaryClone = $(summary).clone();
+                    $(activePage).find(".summary-container").append(summaryClone);
+                }
+            }
+            var pageHeight = 1240;
+            if (params["page-height"] != undefined) {
+                pageHeight = params["page-height"];
+            }
+            var pageWidth = 874;
+            if (params["page-width"] != undefined) {
+                pageWidth = params["page-width"];
+            }
+            $("#report").css("min-width", pageWidth + "px").css("max-width", pageWidth + "px").css("width", pageWidth + "px").css("margin", "auto");
+            $(".page").css("min-height", pageHeight + "px");
+            var pageHeaderHeight = $(".page-header").height();
+            var pageFooterHeight = $(".page-footer").height();
+            console.log("header Height " + pageHeaderHeight + "footer Height " + pageFooterHeight)
+            var pageContentHeight = pageHeight - pageHeaderHeight - pageFooterHeight;
+            var details1 = $(".page").find(".details-1").clone();
+            var details2 = $(".page").find(".details-2").clone();
+            var summary1 = $(".page").find(".summary-1").clone();
+            $(".page").find(".details-container").html("");
+            $(".page").find(".summary-container").html("");
+            var pageClone = $(".page").clone();
+            $("#report").html("");
+            addPage();
+            addDetails(details1);
+            addDetails(details2);
+            addSummary(summary1);
+            $(".page-content").css("min-height", pageContentHeight + "px").css("height", pageContentHeight + "px").css("max-height", pageContentHeight + "px");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Quoate Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body {
+           /* background-color: #1a242e;*/
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e2d6d2;
+            padding: 5px 20px;
+        }
+        
+        .header-text h4 {
+            font-size: 24px;
+        }
+        
+        .logo-img {
+            height: 58px;
+            width: 130px;
+        }
+        
+        .main-content {
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        table,
+        th,
+        td {
+            border-spacing: 7px;
+        }
+        
+        th {
+            background-color: #a5887d;
+            border-radius: 12px;
+            padding: 15px 40px;
+        }
+        
+        td {
+            background-color: #d9d9d9;
+            border-radius: 12px;
+            padding: 15px 40px;
+        }
+        /* footer  */
+        
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e2d6d2;
+            padding: 5px 10px;
+            margin: 0;
+        }
+        
+        .footer-logo-s-1 img {
+            height: 58px;
+            width: 130px;
+        }
+        
+        .footer-logo-s-1 {
+            width: 45%;
+        }
+        
+        .footer-logo-s-2 {
+            flex-direction: column;
+            width: 45%;
+        }
+        
+        @media(max-width:480px) {
+            .footer {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--<div class="header">
+        <div class="header-text">
+            <h4>Quote Number #57</h4>
+        </div>
+        <div>
+            <img src="Logo_1.png" alt="" class="logo-img">
+        </div>
+    </div>-->
+    <table>
+        <tr>
+            <th>Quotes Completed</th>
+            <th>Quoted Amount</th>
+            <th>Actual Cost</th>
+            <th>Profit</th>
+        </tr>
+        {{ItemDetails}}
+    </table>
+    <!--<div class="footer">
+        <div class="footer-logo-s-1">
+            <img src="Logo_1.png" alt="logo">
+        </div>
+        <div class="footer-logo-s-2">
+            <p style="color: #000;"><span class="font-500" style="color: #000;">Trading Name: </span>AH Carpenters and Joinery, Kingswood, Bell Lane, Bedmond WD5 0QS</p>
+            <p style="color: #000;"><span class="font-500" style="color: #000;">VAT Number: </span>277 7129 66</p>
+        </div>
+    </div>-->
+</body>
+
+</html>
