@@ -17,7 +17,7 @@ namespace QuoteManagement.WebApi
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
             logger.Debug("init main function");
             CreateHostBuilder(args).Build().Run();
-        }
+        } 
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
